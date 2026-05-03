@@ -25,8 +25,8 @@ export function Hero() {
         {/* Content */}
         <div className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
           <div className="max-w-2xl text-white">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl mb-6">
-              L'eau est un droit pour tous
+            <h1 className="text-2xl md:text-3xl lg:text-4xl mb-6">
+              D'après 'Abdallah Ibn 'Abbas, le Prophète (ﷺ) a dit : « La meilleure aumône est de donner de l'eau à boire »
             </h1>
             <p className="text-lg md:text-xl mb-8 text-gray-200">
               Depuis bientôt 3 ans, Dar At Taqwah Social construit des puits à travers le Sénégal 

@@ -22,7 +22,7 @@ export function Participate() {
 
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           {/* Collectes régulières */}
-          <div className="bg-white rounded-2xl p-8 shadow-lg">
+          <div className="bg-white rounded-2xl p-8 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
             <div
               className="w-16 h-16 rounded-full flex items-center justify-center mb-6"
               style={{ backgroundColor: '#016B61' }}
@@ -67,7 +67,7 @@ export function Participate() {
           </div>
 
           {/* Prise en charge complète */}
-          <div className="bg-white rounded-2xl p-8 shadow-lg">
+          <div className="bg-white rounded-2xl p-8 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
             <div
               className="w-16 h-16 rounded-full flex items-center justify-center mb-6"
               style={{ backgroundColor: '#CB5B05' }}

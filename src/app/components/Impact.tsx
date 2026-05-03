@@ -65,7 +65,7 @@ export function Impact() {
         </div>
 
         <div ref={sectionRef} className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-          <div className="text-center p-8 rounded-xl" style={{ backgroundColor: '#016B61' }}>
+          <div className="text-center p-8 rounded-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer" style={{ backgroundColor: '#016B61' }}>
             <div className="flex justify-center mb-4">
               <MapPin className="w-12 h-12 text-white" />
             </div>
@@ -73,7 +73,7 @@ export function Impact() {
             <p className="text-white/90">Puits construits</p>
           </div>
 
-          <div className="text-center p-8 rounded-xl" style={{ backgroundColor: '#CB5B05' }}>
+          <div className="text-center p-8 rounded-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer" style={{ backgroundColor: '#CB5B05' }}>
             <div className="flex justify-center mb-4">
               <Clock className="w-12 h-12 text-white" />
             </div>
@@ -81,7 +81,7 @@ export function Impact() {
             <p className="text-white/90">Années d'expérience</p>
           </div>
 
-          <div className="text-center p-8 rounded-xl" style={{ backgroundColor: '#016B61' }}>
+          <div className="text-center p-8 rounded-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer" style={{ backgroundColor: '#016B61' }}>
             <div className="flex justify-center mb-4">
               <TrendingUp className="w-12 h-12 text-white" />
             </div>
@@ -89,7 +89,7 @@ export function Impact() {
             <p className="text-white/90">Collectes par mois</p>
           </div>
 
-          <div className="text-center p-8 rounded-xl" style={{ backgroundColor: '#CB5B05' }}>
+          <div className="text-center p-8 rounded-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer" style={{ backgroundColor: '#CB5B05' }}>
             <div className="flex justify-center mb-4">
               <Users className="w-12 h-12 text-white" />
             </div>

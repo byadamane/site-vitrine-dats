@@ -18,9 +18,9 @@ export function Contact() {
           {/* Contact Info */}
           <div>
             <div className="mb-8">
-              <ImageWithFallback
-                src="https://images.unsplash.com/photo-1658129850537-ea7517a9682f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzZW5lZ2FsJTIwdmlsbGFnZSUyMGNvbW11bml0eXxlbnwxfHx8fDE3NzMwNDA2MjR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                alt="Communauté au Sénégal"
+              <img
+                src="/images/contact-dats.jpg"
+                alt="Contact DATS"
                 className="w-full h-[300px] object-cover rounded-2xl shadow-lg"
               />
             </div>
@@ -83,6 +83,16 @@ export function Contact() {
                     aria-label="Instagram"
                   >
                     <Instagram className="w-6 h-6 text-white" />
+                  </a>
+                  <a
+                    href="#"
+                    className="w-12 h-12 rounded-full flex items-center justify-center transition-all hover:opacity-80"
+                    style={{ backgroundColor: '#016B61' }}
+                    aria-label="TikTok"
+                  >
+                    <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 0 0-.79-.05A6.34 6.34 0 0 0 3.15 15a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.71a8.21 8.21 0 0 0 4.76 1.52v-3.4a4.85 4.85 0 0 1-1-.14z"/>
+                    </svg>
                   </a>
                 </div>
               </div>

@@ -41,7 +41,7 @@ export function About() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          <div className="text-center p-8 bg-white rounded-xl shadow-md">
+          <div className="text-center p-8 bg-white rounded-xl shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
             <div
               className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
               style={{ backgroundColor: '#016B61' }}
@@ -54,7 +54,7 @@ export function About() {
             </p>
           </div>
 
-          <div className="text-center p-8 bg-white rounded-xl shadow-md">
+          <div className="text-center p-8 bg-white rounded-xl shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
             <div
               className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
               style={{ backgroundColor: '#CB5B05' }}
@@ -67,7 +67,7 @@ export function About() {
             </p>
           </div>
 
-          <div className="text-center p-8 bg-white rounded-xl shadow-md">
+          <div className="text-center p-8 bg-white rounded-xl shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
             <div
               className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
               style={{ backgroundColor: '#016B61' }}
