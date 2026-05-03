@@ -51,9 +51,8 @@ export function Footer() {
         </div>
 
         <div className="border-t border-white/20 pt-8 text-center">
-          <p className="text-white/80 flex items-center justify-center gap-2">
-            Fait avec <Heart className="w-4 h-4" style={{ color: '#CB5B05' }} fill="#CB5B05" /> 
-            par Dar At Taqwah Social © 2024
+          <p className="text-white/80">
+            © 2026 Dar At Taqwah Social. Tous droits réservés.
           </p>
         </div>
       </div>
