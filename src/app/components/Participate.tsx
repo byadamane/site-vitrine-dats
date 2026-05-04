@@ -62,7 +62,7 @@ export function Participate() {
               className="w-full px-6 py-3 rounded-lg text-white transition-all hover:opacity-90"
               style={{ backgroundColor: '#016B61' }}
             >
-              Rejoindre les collectes
+              Participer aux collectes
             </button>
           </div>
 

@@ -54,6 +54,18 @@ export function Header() {
               Notre Impact
             </button>
             <button
+              onClick={() => scrollToSection('galerie')}
+              className="text-gray-700 hover:text-[#016B61] transition-colors"
+            >
+              Galerie
+            </button>
+            <button
+              onClick={() => scrollToSection('temoignages')}
+              className="text-gray-700 hover:text-[#016B61] transition-colors"
+            >
+              Témoignages
+            </button>
+            <button
               onClick={() => scrollToSection('participer')}
               className="text-gray-700 hover:text-[#016B61] transition-colors"
             >
@@ -103,6 +115,18 @@ export function Header() {
                 className="text-left text-gray-700 hover:text-[#016B61] py-2 transition-colors"
               >
                 Notre Impact
+              </button>
+              <button
+                onClick={() => scrollToSection('galerie')}
+                className="text-left text-gray-700 hover:text-[#016B61] py-2 transition-colors"
+              >
+                Galerie
+              </button>
+              <button
+                onClick={() => scrollToSection('temoignages')}
+                className="text-left text-gray-700 hover:text-[#016B61] py-2 transition-colors"
+              >
+                Témoignages
               </button>
               <button
                 onClick={() => scrollToSection('participer')}
