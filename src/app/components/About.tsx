@@ -1,4 +1,5 @@
 import { Heart, Users, Droplet } from 'lucide-react';
+import { motion } from 'motion/react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 
 export function About() {
@@ -41,7 +42,12 @@ export function About() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          <div className="text-center p-8 bg-white rounded-xl shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+          <motion.div
+            whileHover={{ y: -8, scale: 1.02 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+            className="text-center p-8 bg-white rounded-xl shadow-md cursor-pointer"
+          >
             <div
               className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
               style={{ backgroundColor: '#016B61' }}
@@ -52,9 +58,14 @@ export function About() {
             <p className="text-gray-600">
               Nous apportons l'eau potable là où elle manque le plus
             </p>
-          </div>
+          </motion.div>
 
-          <div className="text-center p-8 bg-white rounded-xl shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+          <motion.div
+            whileHover={{ y: -8, scale: 1.02 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+            className="text-center p-8 bg-white rounded-xl shadow-md cursor-pointer"
+          >
             <div
               className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
               style={{ backgroundColor: '#CB5B05' }}
@@ -65,9 +76,14 @@ export function About() {
             <p className="text-gray-600">
               Nous travaillons avec les communautés locales pour un impact durable
             </p>
-          </div>
+          </motion.div>
 
-          <div className="text-center p-8 bg-white rounded-xl shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+          <motion.div
+            whileHover={{ y: -8, scale: 1.02 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+            className="text-center p-8 bg-white rounded-xl shadow-md cursor-pointer"
+          >
             <div
               className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
               style={{ backgroundColor: '#016B61' }}
@@ -78,7 +94,7 @@ export function About() {
             <p className="text-gray-600">
               Chaque don contribue à changer des vies de manière concrète
             </p>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

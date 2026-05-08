@@ -1,6 +1,11 @@
-import { Calendar, HandHeart, MessageCircle } from 'lucide-react';
+import { Calendar, HandHeart, MessageCircle, X } from 'lucide-react';
+import { useState } from 'react';
+import { motion } from 'motion/react';
 
 export function Participate() {
+  const [showPaymentModal, setShowPaymentModal] = useState(false);
+  const [paymentUrl, setPaymentUrl] = useState<string | null>(null);
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -13,7 +18,7 @@ export function Participate() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl mb-4" style={{ color: '#016B61' }}>
-            Comment Participer
+            Comment Participer ?
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Rejoignez notre mission et contribuez à apporter l'eau potable aux communautés du Sénégal
@@ -22,7 +27,12 @@ export function Participate() {
 
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           {/* Collectes régulières */}
-          <div className="bg-white rounded-2xl p-8 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+          <motion.div
+            whileHover={{ y: -8, scale: 1.02 }}
+            whileTap={{ scale: 0.97 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+            className="bg-white rounded-2xl p-8 shadow-lg cursor-pointer"
+          >
             <div
               className="w-16 h-16 rounded-full flex items-center justify-center mb-6"
               style={{ backgroundColor: '#016B61' }}
@@ -31,7 +41,7 @@ export function Participate() {
             </div>
             <h3 className="text-2xl mb-4">Collectes Régulières</h3>
             <p className="text-gray-700 mb-6 leading-relaxed">
-              Nous organisons deux collectes par mois pour rassembler les fonds nécessaires à la 
+              Nous organisons deux collectes par mois pour rassembler les fonds nécessaires à la
               construction de nouveaux puits. Chaque contribution, petite ou grande, fait une différence.
             </p>
             <ul className="space-y-3 mb-6 text-gray-700">
@@ -58,16 +68,21 @@ export function Participate() {
               </li>
             </ul>
             <button
-              onClick={() => scrollToSection('contact')}
+              onClick={() => setShowPaymentModal(true)}
               className="w-full px-6 py-3 rounded-lg text-white transition-all hover:opacity-90"
               style={{ backgroundColor: '#016B61' }}
             >
               Participer aux collectes
             </button>
-          </div>
+          </motion.div>
 
           {/* Prise en charge complète */}
-          <div className="bg-white rounded-2xl p-8 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+          <motion.div
+            whileHover={{ y: -8, scale: 1.02 }}
+            whileTap={{ scale: 0.97 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+            className="bg-white rounded-2xl p-8 shadow-lg cursor-pointer"
+          >
             <div
               className="w-16 h-16 rounded-full flex items-center justify-center mb-6"
               style={{ backgroundColor: '#CB5B05' }}
@@ -76,7 +91,7 @@ export function Participate() {
             </div>
             <h3 className="text-2xl mb-4">Prise en Charge d'un Puits</h3>
             <p className="text-gray-700 mb-6 leading-relaxed">
-              Vous souhaitez avoir un impact immédiat et durable ? Prenez en charge la construction 
+              Vous souhaitez avoir un impact immédiat et durable ? Prenez en charge la construction
               complète d'un puits et changez la vie de toute une communauté.
             </p>
             <ul className="space-y-3 mb-6 text-gray-700">
@@ -109,7 +124,7 @@ export function Participate() {
             >
               Contacter le bureau
             </button>
-          </div>
+          </motion.div>
         </div>
 
         {/* CTA Section */}
@@ -120,7 +135,7 @@ export function Participate() {
           <MessageCircle className="w-16 h-16 mx-auto mb-6" />
           <h3 className="text-2xl md:text-3xl mb-4">Besoin d'informations ?</h3>
           <p className="text-white/90 mb-6 max-w-2xl mx-auto leading-relaxed">
-            Notre équipe est disponible pour répondre à toutes vos questions sur nos projets, 
+            Notre équipe est disponible pour répondre à toutes vos questions sur nos projets,
             nos collectes, ou pour vous accompagner dans la prise en charge d'un puits.
           </p>
           <button
@@ -131,6 +146,73 @@ export function Participate() {
           </button>
         </div>
       </div>
+
+      {/* Payment Modal */}
+      {showPaymentModal && (
+        <div
+          className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4"
+          onClick={() => setShowPaymentModal(false)}
+        >
+          <div
+            className="bg-white rounded-2xl p-8 max-w-md w-full relative"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+              onClick={() => setShowPaymentModal(false)}
+            >
+              <X className="w-6 h-6" />
+            </button>
+
+            <h3 className="text-2xl mb-2 text-center" style={{ color: '#016B61' }}>
+              Choisissez votre moyen de participation
+            </h3>
+            <p className="text-gray-600 text-center mb-8">
+              Sélectionnez la méthode qui vous convient
+            </p>
+
+            <div className="flex flex-col gap-4">
+              <button
+                onClick={() => setPaymentUrl('https://pay.wave.com/m/M_sn_yM6dRpUvQhiR/c/sn/')}
+                className="flex items-center justify-center gap-3 px-6 py-4 rounded-xl text-white text-lg font-medium transition-all hover:opacity-90 hover:scale-105"
+                style={{ backgroundColor: '#1DC3E0' }}
+              >
+                Wave
+              </button>
+
+              <button
+                onClick={() => setPaymentUrl('https://paypal.me/darattaqwahsocial')}
+                className="flex items-center justify-center gap-3 px-6 py-4 rounded-xl text-white text-lg font-medium transition-all hover:opacity-90 hover:scale-105"
+                style={{ backgroundColor: '#003087' }}
+              >
+                PayPal
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Payment iframe popup */}
+      {paymentUrl && (
+        <div className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-2xl w-full max-w-2xl h-[80vh] flex flex-col relative">
+            <div className="flex items-center justify-between p-4 border-b">
+              <h3 className="text-lg font-medium" style={{ color: '#016B61' }}>Paiement en cours</h3>
+              <button
+                onClick={() => setPaymentUrl(null)}
+                className="w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors"
+              >
+                <X className="w-6 h-6 text-gray-600" />
+              </button>
+            </div>
+            <iframe
+              src={paymentUrl}
+              className="flex-1 w-full rounded-b-2xl"
+              title="Paiement"
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 }

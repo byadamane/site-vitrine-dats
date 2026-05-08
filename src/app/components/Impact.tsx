@@ -1,5 +1,6 @@
 import { TrendingUp, MapPin, Clock, Users } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
+import { motion } from 'motion/react';
 
 function useCountUp(target: number, duration = 2000, start = false) {
   const [count, setCount] = useState(0);
@@ -64,38 +65,58 @@ export function Impact() {
           </p>
         </div>
 
-        <div ref={sectionRef} className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-          <div className="text-center p-8 rounded-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer" style={{ backgroundColor: '#016B61' }}>
+        <div ref={sectionRef} className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 mb-16">
+          <motion.div
+            whileHover={{ y: -8, scale: 1.02 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+            className="text-center p-4 md:p-8 rounded-xl cursor-pointer flex flex-col items-center justify-center" style={{ backgroundColor: '#016B61' }}
+          >
             <div className="flex justify-center mb-4">
               <MapPin className="w-12 h-12 text-white" />
             </div>
-            <div className="text-5xl mb-2 text-white">{puits}+</div>
+            <div className="text-3xl md:text-5xl mb-2 text-white">{puits}+</div>
             <p className="text-white/90">Puits construits</p>
-          </div>
+          </motion.div>
 
-          <div className="text-center p-8 rounded-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer" style={{ backgroundColor: '#CB5B05' }}>
+          <motion.div
+            whileHover={{ y: -8, scale: 1.02 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+            className="text-center p-4 md:p-8 rounded-xl cursor-pointer flex flex-col items-center justify-center" style={{ backgroundColor: '#CB5B05' }}
+          >
             <div className="flex justify-center mb-4">
               <Clock className="w-12 h-12 text-white" />
             </div>
-            <div className="text-5xl mb-2 text-white">{annees}</div>
+            <div className="text-3xl md:text-5xl mb-2 text-white">{annees}</div>
             <p className="text-white/90">Années d'expérience</p>
-          </div>
+          </motion.div>
 
-          <div className="text-center p-8 rounded-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer" style={{ backgroundColor: '#016B61' }}>
+          <motion.div
+            whileHover={{ y: -8, scale: 1.02 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+            className="text-center p-4 md:p-8 rounded-xl cursor-pointer flex flex-col items-center justify-center" style={{ backgroundColor: '#016B61' }}
+          >
             <div className="flex justify-center mb-4">
               <TrendingUp className="w-12 h-12 text-white" />
             </div>
-            <div className="text-5xl mb-2 text-white">{collectes}x</div>
+            <div className="text-3xl md:text-5xl mb-2 text-white">{collectes}x</div>
             <p className="text-white/90">Collectes par mois</p>
-          </div>
+          </motion.div>
 
-          <div className="text-center p-8 rounded-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer" style={{ backgroundColor: '#CB5B05' }}>
+          <motion.div
+            whileHover={{ y: -8, scale: 1.02 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+            className="text-center p-4 md:p-8 rounded-xl cursor-pointer flex flex-col items-center justify-center" style={{ backgroundColor: '#CB5B05' }}
+          >
             <div className="flex justify-center mb-4">
               <Users className="w-12 h-12 text-white" />
             </div>
-            <div className="text-5xl mb-2 text-white">{familles}+</div>
+            <div className="text-3xl md:text-5xl mb-2 text-white">{familles}+</div>
             <p className="text-white/90">Familles aidées</p>
-          </div>
+          </motion.div>
         </div>
 
         <div className="bg-gray-50 rounded-2xl p-8 md:p-12">

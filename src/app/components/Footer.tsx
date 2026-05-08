@@ -7,7 +7,9 @@ export function Footer() {
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* About */}
           <div>
-            <h3 className="text-xl mb-4 text-white">Dar At Taqwah Social</h3>
+            <a href="#accueil">
+              <img src="/images/logo-dats.png" alt="DATS - Dar At Taqwah Social" className="h-14 w-auto mb-4" />
+            </a>
             <p className="text-white/80 leading-relaxed">
               Un groupe solidaire dédié à la construction de puits au Sénégal depuis bientôt 3 ans.
             </p>

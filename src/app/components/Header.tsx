@@ -1,12 +1,24 @@
 import { Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
+const sections = ['accueil', 'a-propos', 'impact', 'galerie', 'temoignages', 'participer', 'contact'];
+
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('accueil');
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+      for (const section of [...sections].reverse()) {
+        const el = document.getElementById(section);
+        if (el && el.getBoundingClientRect().top <= 150) {
+          setActiveSection(section);
+          break;
+        }
+      }
+    };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -25,49 +37,46 @@ export function Header() {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex items-center">
-            <div className="flex flex-col">
-              <span className="font-bold text-xl" style={{ color: '#016B61' }}>
-                Dar At Taqwah Social
-              </span>
-              <span className="text-sm text-gray-600">DATS</span>
-            </div>
+            <button onClick={() => scrollToSection('accueil')}>
+              <img src="/images/logo-dats.png" alt="DATS - Dar At Taqwah Social" className="h-14 w-auto" />
+            </button>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             <button
               onClick={() => scrollToSection('accueil')}
-              className="text-gray-700 hover:text-[#016B61] transition-colors"
+              className={`transition-colors ${activeSection === 'accueil' ? 'text-[#016B61] font-semibold' : 'text-gray-700 hover:text-[#016B61]'}`}
             >
               Accueil
             </button>
             <button
               onClick={() => scrollToSection('a-propos')}
-              className="text-gray-700 hover:text-[#016B61] transition-colors"
+              className={`transition-colors ${activeSection === 'a-propos' ? 'text-[#016B61] font-semibold' : 'text-gray-700 hover:text-[#016B61]'}`}
             >
               À Propos
             </button>
             <button
               onClick={() => scrollToSection('impact')}
-              className="text-gray-700 hover:text-[#016B61] transition-colors"
+              className={`transition-colors ${activeSection === 'impact' ? 'text-[#016B61] font-semibold' : 'text-gray-700 hover:text-[#016B61]'}`}
             >
               Notre Impact
             </button>
             <button
               onClick={() => scrollToSection('galerie')}
-              className="text-gray-700 hover:text-[#016B61] transition-colors"
+              className={`transition-colors ${activeSection === 'galerie' ? 'text-[#016B61] font-semibold' : 'text-gray-700 hover:text-[#016B61]'}`}
             >
               Galerie
             </button>
             <button
               onClick={() => scrollToSection('temoignages')}
-              className="text-gray-700 hover:text-[#016B61] transition-colors"
+              className={`transition-colors ${activeSection === 'temoignages' ? 'text-[#016B61] font-semibold' : 'text-gray-700 hover:text-[#016B61]'}`}
             >
               Témoignages
             </button>
             <button
               onClick={() => scrollToSection('participer')}
-              className="text-gray-700 hover:text-[#016B61] transition-colors"
+              className={`transition-colors ${activeSection === 'participer' ? 'text-[#016B61] font-semibold' : 'text-gray-700 hover:text-[#016B61]'}`}
             >
               Participer
             </button>
@@ -100,37 +109,37 @@ export function Header() {
             <div className="flex flex-col gap-4">
               <button
                 onClick={() => scrollToSection('accueil')}
-                className="text-left text-gray-700 hover:text-[#016B61] py-2 transition-colors"
+                className={`text-left py-2 transition-colors ${activeSection === 'accueil' ? 'text-[#016B61] font-semibold' : 'text-gray-700 hover:text-[#016B61]'}`}
               >
                 Accueil
               </button>
               <button
                 onClick={() => scrollToSection('a-propos')}
-                className="text-left text-gray-700 hover:text-[#016B61] py-2 transition-colors"
+                className={`text-left py-2 transition-colors ${activeSection === 'a-propos' ? 'text-[#016B61] font-semibold' : 'text-gray-700 hover:text-[#016B61]'}`}
               >
                 À Propos
               </button>
               <button
                 onClick={() => scrollToSection('impact')}
-                className="text-left text-gray-700 hover:text-[#016B61] py-2 transition-colors"
+                className={`text-left py-2 transition-colors ${activeSection === 'impact' ? 'text-[#016B61] font-semibold' : 'text-gray-700 hover:text-[#016B61]'}`}
               >
                 Notre Impact
               </button>
               <button
                 onClick={() => scrollToSection('galerie')}
-                className="text-left text-gray-700 hover:text-[#016B61] py-2 transition-colors"
+                className={`text-left py-2 transition-colors ${activeSection === 'galerie' ? 'text-[#016B61] font-semibold' : 'text-gray-700 hover:text-[#016B61]'}`}
               >
                 Galerie
               </button>
               <button
                 onClick={() => scrollToSection('temoignages')}
-                className="text-left text-gray-700 hover:text-[#016B61] py-2 transition-colors"
+                className={`text-left py-2 transition-colors ${activeSection === 'temoignages' ? 'text-[#016B61] font-semibold' : 'text-gray-700 hover:text-[#016B61]'}`}
               >
                 Témoignages
               </button>
               <button
                 onClick={() => scrollToSection('participer')}
-                className="text-left text-gray-700 hover:text-[#016B61] py-2 transition-colors"
+                className={`text-left py-2 transition-colors ${activeSection === 'participer' ? 'text-[#016B61] font-semibold' : 'text-gray-700 hover:text-[#016B61]'}`}
               >
                 Participer
               </button>
