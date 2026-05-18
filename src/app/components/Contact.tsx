@@ -80,8 +80,8 @@ export function Contact() {
                 </div>
                 <div>
                   <h4 className="mb-1">Téléphone</h4>
-                  <a href="tel:+221776665658" className="block text-gray-600 hover:text-[#016B61] transition-colors">+221 77 666 56 58</a>
                   <a href="tel:+221780110717" className="block text-gray-600 hover:text-[#016B61] transition-colors">+221 78 011 07 17</a>
+                  <a href="tel:+221776665658" className="block text-gray-600 hover:text-[#016B61] transition-colors">+221 77 666 56 58</a>
                 </div>
               </div>
 

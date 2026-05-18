@@ -1,10 +1,12 @@
 import { Calendar, HandHeart, MessageCircle, X } from 'lucide-react';
 import { useState } from 'react';
 import { motion } from 'motion/react';
+import { useIsMobile } from './ui/use-mobile';
 
 export function Participate() {
   const [showPaymentModal, setShowPaymentModal] = useState(false);
   const [paymentUrl, setPaymentUrl] = useState<string | null>(null);
+  const isMobile = useIsMobile();
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -173,20 +175,30 @@ export function Participate() {
 
             <div className="flex flex-col gap-4">
               <button
-                onClick={() => setPaymentUrl('https://pay.wave.com/m/M_sn_yM6dRpUvQhiR/c/sn/')}
+                onClick={() => {
+                  if (isMobile) {
+                    window.location.href = 'https://pay.wave.com/m/M_sn_yM6dRpUvQhiR/c/sn/';
+                    setShowPaymentModal(false);
+                  } else {
+                    setPaymentUrl('https://pay.wave.com/m/M_sn_yM6dRpUvQhiR/c/sn/');
+                  }
+                }}
                 className="flex items-center justify-center gap-3 px-6 py-4 rounded-xl text-white text-lg font-medium transition-all hover:opacity-90 hover:scale-105"
                 style={{ backgroundColor: '#1DC3E0' }}
               >
                 Wave
               </button>
 
-              <button
-                onClick={() => setPaymentUrl('https://paypal.me/darattaqwahsocial')}
+              <a
+                href="https://paypal.me/darattaqwahsocial"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setShowPaymentModal(false)}
                 className="flex items-center justify-center gap-3 px-6 py-4 rounded-xl text-white text-lg font-medium transition-all hover:opacity-90 hover:scale-105"
                 style={{ backgroundColor: '#003087' }}
               >
                 PayPal
-              </button>
+              </a>
             </div>
           </div>
         </div>
