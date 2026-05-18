@@ -8,7 +8,7 @@ export function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const text = `*Nouveau message depuis le site DATS*%0A%0A*Nom :* ${form.name}%0A*Email :* ${form.email}%0A*Téléphone :* ${form.phone}%0A*Sujet :* ${form.subject}%0A*Message :* ${form.message}`;
-    window.open(`https://wa.me/221778873288?text=${text}`, '_blank');
+    window.open(`https://wa.me/221780110717?text=${text}`, '_blank');
   };
 
   return (
